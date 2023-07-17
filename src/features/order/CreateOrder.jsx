@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '../../services/apiRestaurant';
+import { useSelector } from 'react-redux';
 import Button from '../../ui/Button';
 
 // https://uibakery.io/regex-library/phone-number
@@ -36,11 +37,13 @@ const fakeCart = [
 function CreateOrder() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
+  const username = useSelector(({ user }) => user.username);
+  const cart = useSelector(({ cart }) => cart.cart);
 
   const formErrors = useActionData();
 
   // const [withPriority, setWithPriority] = useState(false);
-  const cart = fakeCart;
+  // const cart = fakeCart;
 
   return (
     <div className="px-4 py-6">
@@ -50,7 +53,13 @@ function CreateOrder() {
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">First Name</label>
-          <input className="input grow" type="text" name="customer" required />
+          <input
+            className="input grow"
+            defaultValue={username}
+            type="text"
+            name="customer"
+            required
+          />
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -121,9 +130,9 @@ export async function action({ request }) {
 
   // If everything is okay, create new order and redirect
 
-  // const newOrder = await createOrder(order);
+  const newOrder = await createOrder(order);
 
-  // return redirect(`/order/${newOrder.id}`);
+  return redirect(`/order/${newOrder.id}`);
 
   return null;
 }

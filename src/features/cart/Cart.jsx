@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import LinkButton from '../../ui/LinkButton';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
+import { useSelector } from 'react-redux';
+import { clearCart } from './cartSlice';
+import { useDispatch } from 'react-redux';
 
 const fakeCart = [
   {
@@ -28,17 +31,20 @@ const fakeCart = [
 ];
 
 function Cart() {
-  const cart = fakeCart;
+  // const cart = fakeCart;
+  const username = useSelector(({ user }) => user.username);
+  const cart = useSelector(({ cart }) => cart.cart);
+  const dispatch = useDispatch();
 
   return (
     <div className="px-4 py-3">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
-      <h2 className="mt-7 text-xl font-semibold">Your cart, %NAME%</h2>
+      <h2 className="mt-7 text-xl font-semibold">Your cart, {username}</h2>
 
       <ul className="mt-3 divide-y divide-stone-200 border-b">
         {cart.map((item) => (
-          <CartItem item={item} key={item.key} />
+          <CartItem item={item} key={item.id} />
         ))}
       </ul>
 
@@ -47,7 +53,14 @@ function Cart() {
           Order pizzas
         </Button>
 
-        <Button type="secondary">Clear cart</Button>
+        <Button
+          clickHandler={() => {
+            dispatch(clearCart());
+          }}
+          type="secondary"
+        >
+          Clear cart
+        </Button>
       </div>
     </div>
   );
