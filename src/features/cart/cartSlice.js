@@ -18,11 +18,12 @@ const cartSlice = createSlice({
       console.log(action.payload.pizzaId);
       console.log('deleteFromCart');
     },
+
     // TODO: reuse this code in increaseQuantity and
     // decreaseQuantity since they are very similar
     increaseQuantity: (state, action) => {
       state.cart = state.cart.map((cartItem) => {
-        if (cartItem.PizzaId === action.payload.PizzaId) {
+        if (cartItem.pizzaId === action.payload.pizzaId) {
           return { ...cartItem, quantity: cartItem.quantity + 1 };
         }
         return cartItem;
@@ -53,3 +54,16 @@ export const {
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+export const getCart = (state) => state.cart.cart;
+
+export const getTotalCartquantity = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+
+export const getTotalCartPrice = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
+
+export const getCurrentquantityById = (id) => (state) =>
+  state.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
+
+// 'reselect'
