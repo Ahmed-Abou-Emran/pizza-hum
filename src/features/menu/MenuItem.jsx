@@ -75,9 +75,7 @@ function MenuItem({ pizza }) {
                   >
                     -
                   </Button>
-                  <p className="text-sm">
-                    {quantity} {quantity === 1 ? 'pizza' : 'pizzas'}
-                  </p>
+                  <p className="text-sm">{quantity}</p>
                   <Button
                     clickHandler={() => {
                       dispatch(increaseQuantity({ pizzaId }));
