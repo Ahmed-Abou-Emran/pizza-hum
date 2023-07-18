@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-function Button({
-  children,
-  disabled,
-  to,
-  type,
-  clickHandler: onClick,
-  className = '',
-}) {
+function Button({ children, disabled, to, type, clickHandler: onClick }) {
   const base =
     'inline-block text-sm rounded-full bg-yellow-400 font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed';
 
@@ -30,9 +24,17 @@ function Button({
 
   if (onClick)
     return (
-      <button onClick={onClick} disabled={disabled} className={styles[type]}>
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        exit={{ opacity: 0 }}
+        onClick={onClick}
+        disabled={disabled}
+        className={styles[type]}
+      >
         {children}
-      </button>
+      </motion.button>
     );
 
   return (

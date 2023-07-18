@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
@@ -43,7 +44,13 @@ function CreateOrder() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="rounded-2xl bg-stone-100 px-10 px-4 py-5 py-6 shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      exit={{ opacity: 0, x: -200, transition: { duration: 0.5 } }}
+      className="rounded-2xl bg-stone-100 px-10 px-4 py-5 py-6 shadow-lg"
+    >
       <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
 
       {/* <Form method="POST" action="/order/new"> */}
@@ -138,7 +145,7 @@ function CreateOrder() {
           </Button>
         </div>
       </Form>
-    </div>
+    </motion.div>
   );
 }
 

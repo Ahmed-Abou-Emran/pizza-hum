@@ -1,6 +1,6 @@
 // Test ID: IIDSAT
 import { useFetcher, useLoaderData } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import OrderItem from './OrderItem';
 
 import { getOrder } from '../../services/apiRestaurant';
@@ -37,7 +37,13 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="space-y-8 rounded-2xl bg-stone-100 px-10 py-5 shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      exit={{ opacity: 0, x: -200, transition: { duration: 0.5 } }}
+      className="space-y-8 rounded-2xl bg-stone-100 px-10 py-5 shadow-lg"
+    >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Order #{id} status</h2>
 
@@ -93,7 +99,7 @@ function Order() {
       </div>
 
       {!priority && <UpdateOrder order={order} />}
-    </div>
+    </motion.div>
   );
 }
 

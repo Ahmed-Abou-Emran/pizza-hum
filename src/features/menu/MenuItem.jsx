@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../ui/Button';
+import { motion } from 'framer-motion';
 import { formatCurrency } from '../../utils/helpers';
 import {
   addToCart,
@@ -54,7 +55,13 @@ function MenuItem({ pizza }) {
                 Add to cart
               </Button>
             ) : (
-              <div className="flex space-x-5">
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                exit={{ opacity: 0 }}
+                className="flex space-x-5"
+              >
                 <Button
                   clickHandler={() => {
                     dispatch(deleteFromCart({ pizzaId }));
@@ -85,7 +92,7 @@ function MenuItem({ pizza }) {
                     +
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
         </div>
       </div>
