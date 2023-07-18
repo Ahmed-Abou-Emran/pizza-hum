@@ -32,3 +32,9 @@
     }
   }
 }
+
+.main-container {
+  background: url('/src/assets//pizza-opacity.png') transparent center center
+    fixed;
+  background-size: cover;
+}
