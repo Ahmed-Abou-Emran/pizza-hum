@@ -59,7 +59,7 @@ function MenuItem({ pizza }) {
                   clickHandler={() => {
                     dispatch(deleteFromCart({ pizzaId }));
                   }}
-                  type="small"
+                  type="danger"
                 >
                   Delete
                 </Button>
