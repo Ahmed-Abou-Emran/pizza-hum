@@ -6,10 +6,10 @@ function Error() {
   console.log(error);
 
   return (
-    <div>
+    <div className="rounded-2xl bg-stone-100 px-10 py-5 shadow-lg">
       <h1>Something went wrong 😢</h1>
-      <p>{error.data || error.message}</p>
-
+      {error && <p>{error.data || error.message}</p>}
+      {!error && <p> Page Not Found</p>}
       <LinkButton to="-1">&larr; Go back</LinkButton>
     </div>
   );

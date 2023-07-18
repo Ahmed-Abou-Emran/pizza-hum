@@ -3,7 +3,7 @@ import LinkButton from '../../ui/LinkButton';
 
 function EmptyCart() {
   return (
-    <div className="py-10">
+    <div className="rounded-2xl bg-stone-100 p-10 shadow-lg">
       <LinkButton to="/menu" type="secondary">
         &larr; Back to menu
       </LinkButton>

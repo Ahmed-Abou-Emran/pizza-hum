@@ -17,7 +17,7 @@ function Cart() {
     return <EmptyCart />;
   }
   return (
-    <div className="px-4 py-3">
+    <div className="rounded-2xl bg-stone-100 p-10  shadow-lg">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
       <h2 className="mt-7 text-xl font-semibold">Your cart, {username}</h2>

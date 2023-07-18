@@ -43,12 +43,12 @@ function CreateOrder() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-6">
+    <div className="rounded-2xl bg-stone-100 px-10 px-4 py-5 py-6 shadow-lg">
       <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
 
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST">
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center ">
           <label className="sm:basis-40">First Name</label>
           <input
             className="input grow"
