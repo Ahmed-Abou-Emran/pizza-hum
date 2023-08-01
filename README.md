@@ -3,17 +3,18 @@
 Pizza Hum is a web application that allows users to order pizzas online. Users can easily navigate through the application to view the menu, add items to the cart, update quantities, provide delivery information, and track the order's progress. The application also supports searching for previous orders.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Features](#features)
 - [Usage](#usage)
-- [Technologies and Packages Used](#technologies-used)
-- [acknowledgement](#acknowledgement)
+- [Technologies and Packages Used](#technologies-and-packages-used)
+- [Acknowledgement](#acknowledgement)
 
-## Introduction
+## Introduction <a name="introduction"></a>
 
 Pizza Hum is a user-friendly pizza ordering web application that provides a seamless experience for customers to place their pizza orders online. By utilizing the application, users can browse the menu, customize their pizzas, and conveniently track the delivery progress.
 
-## Features
+## Features <a name="features"></a>
 
 - **Landing Page**: Users are greeted with a landing page where they can enter their name before proceeding to order.
   
@@ -36,7 +37,7 @@ Pizza Hum is a user-friendly pizza ordering web application that provides a seam
 
 ![pizza Hum tracking and searching order](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/1379c32a-f9b8-4e03-a11e-250d18633d94)
 
-## Usage
+## Usage <a name="usage"></a>
 
 1. Upon accessing the application, users will be directed to the landing page, where they need to enter their name.
 
@@ -50,7 +51,7 @@ Pizza Hum is a user-friendly pizza ordering web application that provides a seam
 
 6. Users can also search for previous orders using the order history feature.
 
-## Technologies and Packages Used
+## Technologies and Packages Used <a name="technologies-and-packages-used"></a>
 
 - React
 - Tailwind CSS
@@ -59,5 +60,6 @@ Pizza Hum is a user-friendly pizza ordering web application that provides a seam
 - Framer Motion
 - Geolocation API
 
-## Acknowledgement
+## Acknowledgement <a name="acknowledgement"></a>
+
 This project is part of the "Ultimate React Course" taught by Jonas Schmedtmann. You can find the course <a href="https://www.udemy.com/course/the-ultimate-react-course" target="_blank">here</a>.
