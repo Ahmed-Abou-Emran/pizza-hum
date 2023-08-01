@@ -18,24 +18,26 @@ Pizza Hum is a user-friendly pizza ordering web application that provides a seam
 
 - **Landing Page**: Users are greeted with a landing page where they can enter their name before proceeding to order.
   
-  ![pizza Hum Landing](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/19f3876d-746e-4e8f-8464-bc6bfc9ea703)
+  ![pizza Hum Landing](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/531ab873-5bb4-4c1c-b757-45a1fd7f7162)
+
 
 - **View Menu**: Users can explore the pizza menu, and adding Items to cart with the desired qunatity.
 
-![pizza Hum Menu](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/ec0fef14-2420-42bc-a395-21ef09b5aba4)
+![pizza Hum Menu](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/03547aae-a2ee-45b5-bfa7-79dd89654217)
+
 
 - **Cart Management**: Users can open their cart to view all the selected items and make adjustments to the quantities or remove items if needed.
   
-  ![pizza Hum Cart](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/f8750d87-ab8d-4ada-828b-712e2b08e8c4)
+  ![pizza Hum Cart](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/3067d0bc-1142-4cd4-b6f1-aedb3d86ad24)
 
 - **Order Placement**: Customers can proceed with the order, provide delivery information, and even use geolocation API to get their current location.
 
-  ![pizza Hum Order Placement](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/eb36a285-970a-4615-a564-fcfef8670739)
-
+  ![pizza Hum Order Placement](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/48867ddf-36c1-468f-981a-8067140c3a5e)
 
 - **Order Queue and Searching Previous orders**: Once the order is placed, users can view the estimated remaining time for delivery and track its progress and search for previous orders.
 
-![pizza Hum tracking and searching order](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/1379c32a-f9b8-4e03-a11e-250d18633d94)
+![pizza Hum tracking and searching order](https://github.com/Ahmed-Abou-Emran/pizza-hum/assets/64327685/79f2ef24-f1b2-4b56-98f9-0caf112b03c3)
+
 
 ## Usage <a name="usage"></a>
 
