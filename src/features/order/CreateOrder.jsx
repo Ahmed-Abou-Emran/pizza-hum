@@ -9,14 +9,15 @@ import { clearCart, getCart, getTotalCartPrice } from '../cart/cartSlice';
 import store from '../../store';
 import { formatCurrency } from '../../utils/helpers';
 import { fetchAddress } from '../user/userSlice';
-
+import useDocumentTitleUpdater from '../../hooks/useDocumentTitleUpdater';
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str
   );
 
-function CreateOrder() {
+function CreateOrder({ title }) {
+  useDocumentTitleUpdater(title);
   const [withPriority, setWithPriority] = useState(false);
   const {
     username,

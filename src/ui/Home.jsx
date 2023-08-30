@@ -2,9 +2,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import Button from './Button';
 import CreateUser from '../features/user/CreateUser';
+import useDocumentTitleUpdater from '../hooks/useDocumentTitleUpdater';
+import { useEffect } from 'react';
 
-function Home() {
+function Home({ title }) {
   const username = useSelector(({ user }) => user.username);
+  useDocumentTitleUpdater(title);
+
   return (
     <AnimatePresence>
       <motion.div

@@ -7,12 +7,14 @@ import { useSelector } from 'react-redux';
 import { clearCart } from './cartSlice';
 import { useDispatch } from 'react-redux';
 import EmptyCart from './EmptyCart';
+import useDocumentTitleUpdater from '../../hooks/useDocumentTitleUpdater';
 
-function Cart() {
+function Cart({ title }) {
   // const cart = fakeCart;
   const username = useSelector(({ user }) => user.username);
   const cart = useSelector(({ cart }) => cart.cart);
   const dispatch = useDispatch();
+  useDocumentTitleUpdater(title);
 
   if (cart.length === 0) {
     return <EmptyCart />;

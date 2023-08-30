@@ -2,10 +2,11 @@ import { useLoaderData } from 'react-router-dom';
 import { getMenu } from '../../services/apiRestaurant';
 import { motion } from 'framer-motion';
 import MenuItem from './MenuItem';
+import useDocumentTitleUpdater from '../../hooks/useDocumentTitleUpdater';
 
-function Menu() {
+function Menu({ title }) {
   const menu = useLoaderData();
-
+  useDocumentTitleUpdater(title);
   return (
     <motion.ul
       initial={{ opacity: 0, y: 100 }}

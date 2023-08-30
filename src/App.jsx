@@ -14,35 +14,35 @@ import AppLayout from './ui/AppLayout';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <Error />,
+    errorElement: <Error title="error" />,
 
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Home title="Pizza Hum | Home" />,
       },
       {
         path: '/menu',
-        element: <Menu />,
+        element: <Menu title="Pizza Hum | Menu" />,
         loader: menuLoader,
-        errorElement: <Error />,
+        errorElement: <Error title="error" />,
       },
-      { path: '/cart', element: <Cart /> },
+      { path: '/cart', element: <Cart title="Pizza Hum | Cart" /> },
       {
         path: '/order/new',
-        element: <CreateOrder />,
+        element: <CreateOrder title="Pizza Hum | Create Order" />,
         action: createOrderAction,
       },
       {
         path: '/order/:orderId',
-        element: <Order />,
+        element: <Order title="Pizza Hum | Order" />,
         loader: orderLoader,
-        errorElement: <Error />,
+        errorElement: <Error title="Pizza Hum | Error" />,
         action: updateOrderAction,
       },
       {
         path: '*',
-        element: <Error />,
+        element: <Error title="Pizza Hum | Error" />,
       },
     ],
   },

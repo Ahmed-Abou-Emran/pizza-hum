@@ -11,11 +11,12 @@ import {
 } from '../../utils/helpers';
 import { useEffect } from 'react';
 import UpdateOrder from './UpdateOrder';
+import useDocumentTitleUpdater from '../../hooks/useDocumentTitleUpdater';
 
-function Order() {
+function Order({ title }) {
   const order = useLoaderData();
   const fetcher = useFetcher();
-
+  useDocumentTitleUpdater(title);
   useEffect(
     function () {
       if (!fetcher.data && fetcher.state === 'idle') fetcher.load('/menu');

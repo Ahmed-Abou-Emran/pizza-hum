@@ -1,8 +1,9 @@
 import { useRouteError } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LinkButton from './LinkButton';
-
-function Error() {
+import useDocumentTitleUpdater from '../hooks/useDocumentTitleUpdater';
+function Error({ title }) {
+  useDocumentTitleUpdater(title);
   const error = useRouteError();
   console.log(error);
 
